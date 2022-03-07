@@ -17,3 +17,8 @@ const image = document.getElementById("laptop-image");
 const name = document.getElementById("laptop-name");
 const info = document.getElementById("laptop-info");
 const cost = document.getElementById("laptop-cost");
+
+
+//event listeners
+
+//functions
