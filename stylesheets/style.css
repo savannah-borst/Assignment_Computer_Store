@@ -12,6 +12,7 @@ h1 {
 
 h2,h3 {
     font-family: 'Roboto', sans-serif;
+    text-align: center;
 }
 
 /*Header*/
@@ -25,6 +26,9 @@ header {
 
 /*General*/
 section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     background-color: #F0F0F0;
     border-radius: 10px;
     margin: 1rem;
@@ -32,6 +36,7 @@ section {
 
 .wide {
     width: 861px;
+    height: 7rem;
 }
 
 .small {
@@ -39,30 +44,57 @@ section {
     height: 243px;
 }
 
+button {
+    border-radius: 5px;
+    border: none;
+    height: 2rem;
+    width: 7rem;
+    cursor: pointer;
+}
+
 /*Bank*/
 .bank {
-    height: 7rem;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+ 
+}
+
+#get-loan {
+    background-color: #AFD9E6;
 }
 
 /*Outstanding Loan*/
 .outstanding-loan {
-
+    flex-direction: column;
 }
+
+
 
 /*Work*/
 .work {
 
 }
 
+#work {
+ background-color: #A3E6D1;
+}
+
+#bank {
+ background-color: #AFD9E6;
+}
+
+#repay-loan {
+ background-color: #E6C3BA;
+}
+
 /*Laptop Select*/
 .laptop-select {
-
+    flex-direction: column;
 }
 
 /*Laptop Info*/
 .laptop-info {
 
+}
+
+#buy-laptop {
+    background-color: #A3E6D1;
 }
