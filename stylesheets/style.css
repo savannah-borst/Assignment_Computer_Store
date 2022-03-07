@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+/*Font*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+h1 {
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+}
+
+h2,h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+/*Header*/
+header {
+    background-color: #658D99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+}
+
+/*General*/
+section {
+    background-color: #F0F0F0;
+    border-radius: 10px;
+    margin: 1rem;
+}
+
+.wide {
+    width: 861px;
+}
+
+.small {
+    width: 277px;
+    height: 243px;
+}
+
+/*Bank*/
+.bank {
+    height: 7rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*Outstanding Loan*/
+.outstanding-loan {
+
+}
+
+/*Work*/
+.work {
+
+}
+
+/*Laptop Select*/
+.laptop-select {
+
+}
+
+/*Laptop Info*/
+.laptop-info {
+
+}
