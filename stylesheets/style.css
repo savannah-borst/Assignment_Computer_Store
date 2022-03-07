@@ -12,7 +12,6 @@ h1 {
 
 h2,h3 {
     font-family: 'Roboto', sans-serif;
-    text-align: center;
 }
 
 /*Header*/
@@ -35,13 +34,13 @@ section {
 }
 
 .wide {
-    width: 861px;
-    height: 7rem;
+    width: 40rem;
+    height: 8rem;
 }
 
 .small {
-    width: 277px;
-    height: 243px;
+    width: 12rem;
+    height: 12rem;
 }
 
 button {
@@ -50,6 +49,13 @@ button {
     height: 2rem;
     width: 7rem;
     cursor: pointer;
+    margin: 0.5rem 0;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /*Bank*/
@@ -66,12 +72,12 @@ button {
     flex-direction: column;
 }
 
-
-
 /*Work*/
 .work {
 
 }
+
+
 
 #work {
  background-color: #A3E6D1;
