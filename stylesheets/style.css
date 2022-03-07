@@ -50,6 +50,8 @@ button {
     width: 7rem;
     cursor: pointer;
     margin: 0.5rem 0;
+    transition-duration: 0.4s;
+    box-shadow: 0px 5px 15px -10px;
 }
 
 .col {
@@ -60,11 +62,18 @@ button {
 
 /*Bank*/
 .bank {
- 
 }
 
 #get-loan {
     background-color: #AFD9E6;
+}
+
+#get-loan:hover {
+    background-color: #9BC1CC;
+}
+
+#get-loan:active {
+    transform: scale(.96);
 }
 
 /*Outstanding Loan*/
@@ -83,12 +92,36 @@ button {
  background-color: #A3E6D1;
 }
 
+#work:hover {
+    background-color: #91CCB9;
+}
+
+#work:active {
+    transform: scale(.96);
+}
+
 #bank {
  background-color: #AFD9E6;
 }
 
+#bank:hover {
+    background-color: #9BC1CC;
+}
+
+#bank:active  {
+    transform: scale(.96);
+}
+
 #repay-loan {
  background-color: #E6C3BA;
+}
+
+#repay-loan:hover {
+    background-color: #CCADA5;
+}
+
+#repay-loan:active {
+    transform: scale(.96);
 }
 
 /*Laptop Select*/
@@ -103,4 +136,12 @@ button {
 
 #buy-laptop {
     background-color: #A3E6D1;
+}
+
+#buy-laptop:hover {
+    background-color: #91CCB9;
+}
+
+#buy-laptop:active {
+    transform: scale(.96);
 }
