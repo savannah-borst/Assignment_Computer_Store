@@ -18,7 +18,26 @@ const name = document.getElementById("laptop-name");
 const info = document.getElementById("laptop-info");
 const cost = document.getElementById("laptop-cost");
 
+let workMoney = 0;
+workAmount.innerHTML = workMoney + " " + "Euro";
 
 //event listeners
+workBtn.addEventListener("click", work);
 
 //functions
+function work() {
+    workMoney += 100;
+    workAmount.innerHTML = workMoney + " " + "Euro";
+}
+
+function bank() {
+    
+}
+
+function getLoan() {
+
+}
+
+function buyNow() {
+
+}
