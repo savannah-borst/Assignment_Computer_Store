@@ -25,7 +25,7 @@ workAmount.innerHTML = workMoney + " " + "Euro";
 let bankMoney = 0;
 balanceAmount.innerHTML = bankMoney + " " + "Euro";
 
-let loan = false;
+let loan = true;
 
 //event listeners
 workBtn.addEventListener("click", work);
@@ -39,16 +39,17 @@ function work() {
 
 function bank() {
     //if loan is true deduct 10% towards bank and remove 10% from outstanding loan
-    if (loan === true) {
+    if (loan) {
         bankMoney = bankMoney + (workMoney / 100 * 90);
+        balanceAmount.innerHTML = bankMoney + " " + "Euro";
         //loanMoney will be deducted by 10%
     } else {
         bankMoney += workMoney
         balanceAmount.innerHTML = bankMoney + " " + "Euro";
-    
-        workMoney = 0;
-        workAmount.innerHTML = workMoney + " " + "Euro";
     }
+    
+    workMoney = 0;
+    workAmount.innerHTML = workMoney + " " + "Euro";
 }
 
 function getLoan() {
