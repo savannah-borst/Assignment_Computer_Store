@@ -34,6 +34,7 @@ loanAmount.innerHTML = loanMoney + " " + "Euro";
 workBtn.addEventListener("click", work);
 bankBtn.addEventListener("click", bank);
 getLoanBtn.addEventListener("click", getLoan);
+buyBtn.addEventListener("click", buyNow);
 
 //functions
 function work() {
@@ -84,6 +85,11 @@ function getLoan() {
     
 }
 
-function buyNow() {
-
+function buyNow(cost) {
+    if (cost > balanceAmount) {
+        //add warning message
+    } else {
+        //add succesfull purchase message
+        //deduct money from the bank
+    }
 }
