@@ -35,6 +35,7 @@ workBtn.addEventListener("click", work);
 bankBtn.addEventListener("click", bank);
 getLoanBtn.addEventListener("click", getLoan);
 buyBtn.addEventListener("click", buyNow);
+repayLoanBtn.addEventListener("click",repayLoan);
 
 //functions
 function work() {
@@ -61,6 +62,8 @@ function bank() {
     //reset workMoney
     workMoney = 0;
     workAmount.innerHTML = workMoney + " " + "Euro";
+
+    //if loanmoney = 0 than turn visibility to hidden
 }
 
 function getLoan() {
@@ -92,4 +95,11 @@ function buyNow(cost) {
         //add succesfull purchase message
         //deduct money from the bank
     }
+}
+
+function repayLoan() {
+    //work money to  loan money
+    //if work money is more than loanmoney transfer to bank
+
+    //if loanmoney = 0 change visibility
 }
