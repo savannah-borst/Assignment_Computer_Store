@@ -17,6 +17,7 @@ const image = document.getElementById("laptop-image");
 const name = document.getElementById("laptop-name");
 const info = document.getElementById("laptop-info");
 const cost = document.getElementById("laptop-cost");
+const outstanding = document.getElementById("outstanding");
 
 //start
 let workMoney = 0;
@@ -29,9 +30,13 @@ let loan = false;
 let loanMoney = 0;
 loanAmount.innerHTML = loanMoney + " " + "Euro";
 
+repayLoanBtn.style.display = "none";
+outstanding.style.visibility = "hidden";
+
 //event listeners
 workBtn.addEventListener("click", work);
 bankBtn.addEventListener("click", bank);
+getLoanBtn.addEventListener("click", getLoan);
 
 //functions
 function work() {
@@ -58,6 +63,18 @@ function bank() {
 
 function getLoan() {
     //pop-up/prompt for amount of loan
+    let amount = prompt("please enter the amount you want to loan");
+    if (loan) {
+        alert("You can only have one loan!");
+    } else if (amount > (bankMoney * 2)) {
+        alert("You can NOT get more loan than double your bank balance.");
+    } else {
+        loanAmount.innerHTML = amount + " " + "Euro";
+        loan = true;
+        repayLoanBtn.style.display = "inline";
+        outstanding.style.visibility = "visible";
+    }
+
 
     //make visible: repay button + outstanding loan section
     //refer to layout changes function

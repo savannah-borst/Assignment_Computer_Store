@@ -122,7 +122,7 @@ button {
 #repay-loan {
     background-color: #E6C3BA;
     position: relative;
-    left: 65px;
+    left: 30px;
 }
    
 #repay-loan:hover {
@@ -147,9 +147,9 @@ button {
     transform: scale(.96);
 }
 
-/*.hidden {
+.hidden {
     display: none;
-}*/
+}
 
 /*Bank*/
 .bank {
@@ -169,6 +169,7 @@ button {
 /*Work*/
 .work {
     grid-area: work;
+    height: 10rem;
     position: relative;
     top: -75px;
 }
@@ -210,6 +211,6 @@ button {
 .laptop-info {
     grid-area: info;
     position: relative;
-    top: -150px;
+    top: -120px;
     height: 12rem;
 }
