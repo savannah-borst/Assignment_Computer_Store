@@ -63,12 +63,15 @@ function bank() {
 
 function getLoan() {
     //pop-up/prompt for amount of loan
-    let amount = prompt("please enter the amount you want to loan");
+    let amount = parseInt(prompt("please enter the amount you want to loan"));
     if (loan) {
         alert("You can only have one loan!");
     } else if (amount > (bankMoney * 2)) {
         alert("You can NOT get more loan than double your bank balance.");
+    } else if (amount == "" || amount == null || isNaN(amount)) {
+        alert("You did not fill in a number")
     } else {
+        console.log(typeof amount);
         loanAmount.innerHTML = amount + " " + "Euro";
         loan = true;
         repayLoanBtn.style.display = "inline";
