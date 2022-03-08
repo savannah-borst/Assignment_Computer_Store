@@ -30,9 +30,6 @@ let loan = false;
 let loanMoney = 0;
 loanAmount.innerHTML = loanMoney + " " + "Euro";
 
-repayLoanBtn.style.display = "none";
-outstanding.style.visibility = "hidden";
-
 //event listeners
 workBtn.addEventListener("click", work);
 bankBtn.addEventListener("click", bank);
@@ -40,6 +37,7 @@ getLoanBtn.addEventListener("click", getLoan);
 
 //functions
 function work() {
+    //Add 100 per work click
     workMoney += 100;
     workAmount.innerHTML = workMoney + " " + "Euro";
 }
@@ -47,16 +45,19 @@ function work() {
 function bank() {
     //if loan is true deduct 10% towards bank and remove 10% from outstanding loan
     if (loan) {
-        bankMoney = bankMoney + (workMoney / 100 * 90);
+        //if there is a loan when transfer to bank 90 goes to bank 10 to pay the loan
+        bankMoney += (workMoney / 100 * 90);
         balanceAmount.innerHTML = bankMoney + " " + "Euro";
 
-        loanMoney = loanMoney - (workMoney / 100 * 10);
+        loanMoney -= (workMoney / 100 * 10);
         loanAmount.innerHTML = loanMoney + " " + "Euro";
     } else {
+        //if there is no loan everything goes to bank
         bankMoney += workMoney
         balanceAmount.innerHTML = bankMoney + " " + "Euro";
     }
 
+    //reset workMoney
     workMoney = 0;
     workAmount.innerHTML = workMoney + " " + "Euro";
 }
@@ -71,17 +72,16 @@ function getLoan() {
     } else if (amount == "" || amount == null || isNaN(amount)) {
         alert("You did not fill in a number")
     } else {
-        console.log(typeof amount);
+        //set outstanding loan
+        loanMoney = amount;
         loanAmount.innerHTML = amount + " " + "Euro";
         loan = true;
+        //make visible: repay button + outstanding loan section
         repayLoanBtn.style.display = "inline";
         outstanding.style.visibility = "visible";
     }
 
-
-    //make visible: repay button + outstanding loan section
-    //refer to layout changes function
-    //set outstanding loan
+    
 }
 
 function buyNow() {
