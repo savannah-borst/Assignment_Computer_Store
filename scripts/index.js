@@ -25,6 +25,8 @@ workAmount.innerHTML = workMoney + " " + "Euro";
 let bankMoney = 0;
 balanceAmount.innerHTML = bankMoney + " " + "Euro";
 
+let loan = false;
+
 //event listeners
 workBtn.addEventListener("click", work);
 bankBtn.addEventListener("click", bank);
@@ -36,11 +38,17 @@ function work() {
 }
 
 function bank() {
-    bankMoney += workMoney
-    balanceAmount.innerHTML = bankMoney + " " + "Euro";
-
-    workMoney = 0;
-    workAmount.innerHTML = workMoney + " " + "Euro";
+    //if loan is true deduct 10% towards bank and remove 10% from outstanding loan
+    if (loan === true) {
+        bankMoney = bankMoney + (workMoney / 100 * 90);
+        //loanMoney will be deducted by 10%
+    } else {
+        bankMoney += workMoney
+        balanceAmount.innerHTML = bankMoney + " " + "Euro";
+    
+        workMoney = 0;
+        workAmount.innerHTML = workMoney + " " + "Euro";
+    }
 }
 
 function getLoan() {
