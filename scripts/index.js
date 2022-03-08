@@ -31,6 +31,7 @@ let loanMoney = 0;
 loanAmount.innerHTML = loanMoney + " " + "Euro";
 
 //event listeners
+
 workBtn.addEventListener("click", work);
 bankBtn.addEventListener("click", bank);
 getLoanBtn.addEventListener("click", getLoan);
@@ -98,8 +99,27 @@ function buyNow(cost) {
 }
 
 function repayLoan() {
-    //work money to  loan money
-    //if work money is more than loanmoney transfer to bank
+    //if workmoney is more then loanmoney
+    if (workMoney > loanMoney) {
+        workMoney -= loanMoney;
+        //add remaining to bank
+        bankMoney += workMoney;
+        balanceAmount.innerHTML = bankMoney + " " + "Euro";
 
-    //if loanmoney = 0 change visibility
+        loanMoney = 0;
+        loanAmount.innerHTML = loanMoney + " " + "Euro";
+
+        workMoney = 0;
+        workAmount.innerHTML = workMoney + " " + "Euro";
+
+        //change visibility
+        repayLoanBtn.style.display = "none";
+        outstanding.style.visibility = "hidden";
+    } else {
+        loanMoney -= workMoney;
+        loanAmount.innerHTML = loanMoney + " " + "Euro";
+
+        workMoney = 0;
+        workAmount.innerHTML = workMoney + " " + "Euro";
+    }
 }
