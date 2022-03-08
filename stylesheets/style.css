@@ -25,9 +25,20 @@ header {
     justify-content: center;
     align-items: center;
     height: 5rem;
+    grid-area: header;
 }
 
 /*General*/
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header header header header header"
+        ". bank bank select ."
+        ". work work loan ."
+        ". info info info .";
+}
 section {
     display: flex;
     justify-content: space-around;
@@ -47,6 +58,13 @@ section {
     height: 12rem;
 }
 
+.col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*buttons*/
 button {
     border-radius: 5px;
     border: none;
@@ -58,18 +76,10 @@ button {
     box-shadow: 0px 5px 15px -10px;
 }
 
-.col {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/*Bank*/
-.bank {
-}
-
 #get-loan {
     background-color: #AFD9E6;
+    position: relative;
+    left: 20px;
 }
 
 #get-loan:hover {
@@ -80,66 +90,48 @@ button {
     transform: scale(.96);
 }
 
-/*Outstanding Loan*/
-.outstanding-loan {
-    flex-direction: column;
-}
-
-/*Work*/
-.work {
-
-}
-
-
-
 #work {
- background-color: #A3E6D1;
+    background-color: #A3E6D1;
 }
-
+   
 #work:hover {
     background-color: #91CCB9;
 }
-
+   
 #work:active {
     transform: scale(.96);
 }
-
+   
 #bank {
- background-color: #AFD9E6;
+    background-color: #AFD9E6;
 }
-
+   
 #bank:hover {
     background-color: #9BC1CC;
 }
-
+   
 #bank:active  {
     transform: scale(.96);
 }
-
+   
 #repay-loan {
- background-color: #E6C3BA;
+    background-color: #E6C3BA;
+    position: relative;
+    left: 65px;
 }
-
+   
 #repay-loan:hover {
     background-color: #CCADA5;
 }
-
+   
 #repay-loan:active {
     transform: scale(.96);
 }
 
-/*Laptop Select*/
-.laptop-select {
-    flex-direction: column;
-}
-
-/*Laptop Info*/
-.laptop-info {
-
-}
-
 #buy-laptop {
     background-color: #A3E6D1;
+    position: relative;
+    left: 20px;
 }
 
 #buy-laptop:hover {
@@ -148,4 +140,43 @@ button {
 
 #buy-laptop:active {
     transform: scale(.96);
+}
+
+/*Bank*/
+.bank {
+    margin-top: 5rem;
+    grid-area: bank;
+}
+
+/*Outstanding Loan*/
+.outstanding-loan {
+    flex-direction: column;
+    grid-area: loan;
+    position: relative;
+    left: -10px;
+    top: -10px;
+}
+
+/*Work*/
+.work {
+    grid-area: work;
+    position: relative;
+    top: -75px;
+}
+
+/*Laptop Select*/
+.laptop-select {
+    flex-direction: column;
+    grid-area: select;
+    margin-top: 5rem;
+    position: relative;
+    left: -10px;
+}
+
+/*Laptop Info*/
+.laptop-info {
+    grid-area: info;
+    position: relative;
+    top: -150px;
+    height: 12rem;
 }
