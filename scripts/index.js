@@ -28,10 +28,9 @@ setBalanceAmount(bankMoney);
 
 let loan = false;
 let loanMoney = 0;
-setBalanceAmount(loanMoney);
+setLoanAmount(loanMoney);
 
 //event listeners
-
 workBtn.addEventListener("click", work);
 bankBtn.addEventListener("click", bank);
 getLoanBtn.addEventListener("click", getLoan);
@@ -50,14 +49,14 @@ function bank() {
     if (loan) {
         //if there is a loan when transfer to bank 90 goes to bank 10 to pay the loan
         bankMoney += (workMoney / 100 * 90);
-        balanceAmount.innerHTML = bankMoney + " " + "Euro";
+        setBalanceAmount(bankMoney);
 
         loanMoney -= (workMoney / 100 * 10);
-        loanAmount.innerHTML = loanMoney + " " + "Euro";
+        setLoanAmount(loanMoney);
     } else {
         //if there is no loan everything goes to bank
         bankMoney += workMoney
-        balanceAmount.innerHTML = bankMoney + " " + "Euro";
+        setBalanceAmount(bankMoney);
     }
 
     //reset workMoney
@@ -79,7 +78,7 @@ function getLoan() {
     } else {
         //set outstanding loan
         loanMoney = amount;
-        loanAmount.innerHTML = amount + " " + "Euro";
+        setLoanAmount(loanMoney);
         loan = true;
         //make visible: repay button + outstanding loan section
         repayLoanBtn.style.display = "inline";
@@ -104,10 +103,10 @@ function repayLoan() {
         workMoney -= loanMoney;
         //add remaining to bank
         bankMoney += workMoney;
-        balanceAmount.innerHTML = bankMoney + " " + "Euro";
+        setBalanceAmount(bankMoney);
 
         loanMoney = 0;
-        loanAmount.innerHTML = loanMoney + " " + "Euro";
+        setLoanAmount(loanMoney);
 
         workMoney = 0;
         setWorkAmount(workMoney);
@@ -117,7 +116,7 @@ function repayLoan() {
         outstanding.style.visibility = "hidden";
     } else {
         loanMoney -= workMoney;
-        loanAmount.innerHTML = loanMoney + " " + "Euro";
+        setLoanAmount(loanMoney);
 
         workMoney = 0;
         setWorkAmount(workMoney);
