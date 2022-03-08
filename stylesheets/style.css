@@ -123,6 +123,7 @@ button {
     background-color: #E6C3BA;
     position: relative;
     left: 30px;
+    display: none;
 }
    
 #repay-loan:hover {
@@ -147,10 +148,6 @@ button {
     transform: scale(.96);
 }
 
-.hidden {
-    display: none;
-}
-
 /*Bank*/
 .bank {
     margin-top: 5rem;
@@ -164,6 +161,7 @@ button {
     position: relative;
     left: -10px;
     top: -10px;
+    visibility: hidden;
 }
 
 /*Work*/
