@@ -21,14 +21,14 @@ const outstanding = document.getElementById("outstanding");
 
 //start
 let workMoney = 0;
-workAmount.innerHTML = workMoney + " " + "Euro";
+setWorkAmount(workMoney);
 
 let bankMoney = 0;
-balanceAmount.innerHTML = bankMoney + " " + "Euro";
+setBalanceAmount(bankMoney);
 
 let loan = false;
 let loanMoney = 0;
-loanAmount.innerHTML = loanMoney + " " + "Euro";
+setBalanceAmount(loanMoney);
 
 //event listeners
 
@@ -42,7 +42,7 @@ repayLoanBtn.addEventListener("click",repayLoan);
 function work() {
     //Add 100 per work click
     workMoney += 100;
-    workAmount.innerHTML = workMoney + " " + "Euro";
+    setWorkAmount(workMoney);
 }
 
 function bank() {
@@ -62,7 +62,7 @@ function bank() {
 
     //reset workMoney
     workMoney = 0;
-    workAmount.innerHTML = workMoney + " " + "Euro";
+    setWorkAmount(workMoney);
 
     //if loanmoney = 0 than turn visibility to hidden
 }
@@ -110,7 +110,7 @@ function repayLoan() {
         loanAmount.innerHTML = loanMoney + " " + "Euro";
 
         workMoney = 0;
-        workAmount.innerHTML = workMoney + " " + "Euro";
+        setWorkAmount(workMoney);
 
         //change visibility
         repayLoanBtn.style.display = "none";
@@ -120,6 +120,19 @@ function repayLoan() {
         loanAmount.innerHTML = loanMoney + " " + "Euro";
 
         workMoney = 0;
-        workAmount.innerHTML = workMoney + " " + "Euro";
+        setWorkAmount(workMoney);
     }
+}
+
+//Setting the innerHTML
+function setBalanceAmount(bank){
+    balanceAmount.innerHTML = bank + " " + "Euro";
+}
+
+function setWorkAmount(work) {
+    workAmount.innerHTML = work + " " + "Euro";
+}
+
+function setLoanAmount(loan) {
+    loanAmount.innerHTML = loan + " " + "Euro";
 }
