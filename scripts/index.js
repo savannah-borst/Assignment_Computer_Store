@@ -57,7 +57,11 @@ function bank() {
 }
 
 function getLoan() {
+    //pop-up/prompt for amount of loan
 
+    //make visible: repay button + outstanding loan section
+    //refer to layout changes function
+    //set outstanding loan
 }
 
 function buyNow() {

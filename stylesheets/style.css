@@ -147,6 +147,10 @@ button {
     transform: scale(.96);
 }
 
+/*.hidden {
+    display: none;
+}*/
+
 /*Bank*/
 .bank {
     margin-top: 5rem;
