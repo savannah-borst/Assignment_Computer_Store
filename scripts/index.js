@@ -31,6 +31,8 @@ let loan = false;
 let loanMoney = 0;
 setLoanAmount(loanMoney);
 
+populateSelect();
+selectChange();
 //EVENT LISTENERS
 workBtn.addEventListener("click", work);
 bankBtn.addEventListener("click", bank);
@@ -142,28 +144,38 @@ function setLoanAmount(loan) {
 }
 
 //fetch
-fetch('https://noroff-komputer-store-api.herokuapp.com/computers')
-    .then(response => response.json())
-    .then(data => {
-        //console.log(data);
-        //console.log(typeof data);
-        dataArray = data;
-        populateSelect(data);     
-    })
-    .catch(error => console.log(error));
+async function getComputer() {
+    let response = await fetch('https://noroff-komputer-store-api.herokuapp.com/computers');
+    let result = await response.json();
+    return result
+}
 
 //populate select
-function populateSelect(computer){
+async function populateSelect(){
+    let computer = await getComputer();
+    console.log(computer);
     for (let i = 0; i < computer.length; i++) {
         const optionElement = document.createElement("option");
-    
+        optionElement.setAttribute('value', i);
         optionElement.innerText = computer[i].title;
         select.appendChild(optionElement);
     }
 }
 
 //selection computer
-function selectChange() {
+async function selectChange() {
+    let computer = await getComputer();
+    //loop through data 
+    for (let i = 0; i < computer.length; i++) {
+        let imageURL = 'https://noroff-komputer-store-api.herokuapp.com/' + computer[i].image;
+        if (select.value == i) {
+            features.innerText = computer[i].specs;
+            laptopName.innerText = computer[i].title;
+            image.setAttribute('src', imageURL);
+            info.innerText = computer[i].description;
+            cost.innerText = computer[i].price + " " + "Euro";
+        }
+    }
     
 }
 

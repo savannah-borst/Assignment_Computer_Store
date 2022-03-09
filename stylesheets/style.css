@@ -189,6 +189,7 @@ button {
     margin-top: 5rem;
     position: relative;
     left: -10px;
+    height: 15rem;
 }
 
 .headlaptop {
@@ -203,6 +204,7 @@ button {
 #features {
     margin: 0 2rem 1rem 2rem;
     font-size: 12px;
+    width: 10rem;
 }
 
 /*Laptop Info*/
@@ -211,4 +213,17 @@ button {
     position: relative;
     top: -120px;
     height: 12rem;
+}
+
+img {
+    max-width: 150px;
+    max-height: 100px;
+}
+
+#laptop-name {
+    max-width: 20rem;
+}
+
+#laptop-info {
+    max-width: 20rem;
 }
