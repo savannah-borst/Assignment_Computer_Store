@@ -1,4 +1,4 @@
-//Get elements by ID
+//GET ELEMENTS BY ID
 //amounts
 const balanceAmount = document.getElementById("balance-amount");
 const loanAmount = document.getElementById("loan-amount");
@@ -12,14 +12,15 @@ const bankBtn = document.getElementById("bank");
 const buyBtn = document.getElementById("buy-laptop");
 
 //Laptop
+const select = document.getElementById("select");
 const features = document.getElementById("features");
 const image = document.getElementById("laptop-image");
-const name = document.getElementById("laptop-name");
+const laptopName = document.getElementById("laptop-name");
 const info = document.getElementById("laptop-info");
 const cost = document.getElementById("laptop-cost");
 const outstanding = document.getElementById("outstanding");
 
-//start
+//START
 let workMoney = 0;
 setWorkAmount(workMoney);
 
@@ -30,20 +31,23 @@ let loan = false;
 let loanMoney = 0;
 setLoanAmount(loanMoney);
 
-//event listeners
+//EVENT LISTENERS
 workBtn.addEventListener("click", work);
 bankBtn.addEventListener("click", bank);
 getLoanBtn.addEventListener("click", getLoan);
 buyBtn.addEventListener("click", buyNow);
-repayLoanBtn.addEventListener("click",repayLoan);
+repayLoanBtn.addEventListener("click", repayLoan);
 
-//functions
+
+//FUNCTIONS
+//work button
 function work() {
     //Add 100 per work click
     workMoney += 100;
     setWorkAmount(workMoney);
 }
 
+//bank button
 function bank() {
     //if loan is true deduct 10% towards bank and remove 10% from outstanding loan
     if (loan) {
@@ -66,6 +70,7 @@ function bank() {
     //if loanmoney = 0 than turn visibility to hidden
 }
 
+// get loan button
 function getLoan() {
     //pop-up/prompt for amount of loan
     let amount = parseInt(prompt("please enter the amount you want to loan"));
@@ -84,10 +89,9 @@ function getLoan() {
         repayLoanBtn.style.display = "inline";
         outstanding.style.visibility = "visible";
     }
-
-    
 }
 
+//buy now button
 function buyNow(cost) {
     if (cost > balanceAmount) {
         //add warning message
@@ -97,6 +101,7 @@ function buyNow(cost) {
     }
 }
 
+//repay loan button
 function repayLoan() {
     //if workmoney is more then loanmoney
     if (workMoney > loanMoney) {
@@ -135,3 +140,11 @@ function setWorkAmount(work) {
 function setLoanAmount(loan) {
     loanAmount.innerHTML = loan + " " + "Euro";
 }
+
+//fetch
+fetch('https://noroff-komputer-store-api.herokuapp.com/computers')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        console.log(typeof data);     
+    });
