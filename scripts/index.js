@@ -37,7 +37,7 @@ bankBtn.addEventListener("click", bank);
 getLoanBtn.addEventListener("click", getLoan);
 buyBtn.addEventListener("click", buyNow);
 repayLoanBtn.addEventListener("click", repayLoan);
-
+select.addEventListener("change", selectChange);
 
 //FUNCTIONS
 //work button
@@ -130,32 +130,40 @@ function repayLoan() {
 
 //Setting the innerHTML
 function setBalanceAmount(bank){
-    balanceAmount.innerHTML = bank + " " + "Euro";
+    balanceAmount.innerText = bank + " " + "Euro";
 }
 
 function setWorkAmount(work) {
-    workAmount.innerHTML = work + " " + "Euro";
+    workAmount.innerText = work + " " + "Euro";
 }
 
 function setLoanAmount(loan) {
-    loanAmount.innerHTML = loan + " " + "Euro";
+    loanAmount.innerText = loan + " " + "Euro";
 }
 
 //fetch
 fetch('https://noroff-komputer-store-api.herokuapp.com/computers')
     .then(response => response.json())
     .then(data => {
-        console.log(data);
-        console.log(typeof data);
+        //console.log(data);
+        //console.log(typeof data);
+        dataArray = data;
         populateSelect(data);     
-    });
+    })
+    .catch(error => console.log(error));
 
 //populate select
 function populateSelect(computer){
     for (let i = 0; i < computer.length; i++) {
-                const optionElement = document.createElement("option");
+        const optionElement = document.createElement("option");
     
-                optionElement.innerText = computer[i].title;
-                select.appendChild(optionElement);
-            }
+        optionElement.innerText = computer[i].title;
+        select.appendChild(optionElement);
     }
+}
+
+//selection computer
+function selectChange() {
+    
+}
+
