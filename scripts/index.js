@@ -146,5 +146,16 @@ fetch('https://noroff-komputer-store-api.herokuapp.com/computers')
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        console.log(typeof data);     
+        console.log(typeof data);
+        populateSelect(data);     
     });
+
+//populate select
+function populateSelect(computer){
+    for (let i = 0; i < computer.length; i++) {
+                const optionElement = document.createElement("option");
+    
+                optionElement.innerText = computer[i].title;
+                select.appendChild(optionElement);
+            }
+    }
