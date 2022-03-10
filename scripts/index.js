@@ -5,11 +5,11 @@ const loanAmount = document.getElementById("loan-amount");
 const workAmount = document.getElementById("work-amount");
 
 //buttons
-const getLoanBtn = document.getElementById("get-loan");
-const repayLoanBtn = document.getElementById("repay-loan");
-const workBtn = document.getElementById("work");
-const bankBtn = document.getElementById("bank");
-const buyBtn = document.getElementById("buy-laptop");
+const getLoanBtn = document.getElementById("get-loan-btn");
+const repayLoanBtn = document.getElementById("repay-loan-btn");
+const workBtn = document.getElementById("work-btn");
+const bankBtn = document.getElementById("bank-btn");
+const buyBtn = document.getElementById("buy-laptop-btn");
 
 //Laptop
 const select = document.getElementById("select");
@@ -111,9 +111,6 @@ function getLoan() {
         }
     }
 
-    
-    
-    
     if (amount > (bankMoney * 2)) {
         alert("You can NOT get more loan than double your bank balance.");
     } else if (amount == "" || amount == null || isNaN(amount)) {

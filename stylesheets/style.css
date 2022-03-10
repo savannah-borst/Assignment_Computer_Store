@@ -77,74 +77,74 @@ button {
     box-shadow: 0px 5px 15px -10px;
 }
 
-#get-loan {
+#get-loan-btn {
     background-color: #AFD9E6;
     position: relative;
     left: 20px;
 }
 
-#get-loan:hover {
+#get-loan-btn:hover {
     background-color: #9BC1CC;
 }
 
-#get-loan:active {
+#get-loan-btn:active {
     transform: scale(.96);
 }
 
-#work {
+#work-btn {
     background-color: #A3E6D1;
     position: relative;
     left: 30px;
 }
    
-#work:hover {
+#work-btn:hover {
     background-color: #91CCB9;
 }
    
-#work:active {
+#work-btn:active {
     transform: scale(.96);
 }
    
-#bank {
+#bank-btn {
     background-color: #AFD9E6;
     position: relative;
     left: 30px;
 }
    
-#bank:hover {
+#bank-btn:hover {
     background-color: #9BC1CC;
 }
    
-#bank:active  {
+#bank-btn:active  {
     transform: scale(.96);
 }
    
-#repay-loan {
+#repay-loan-btn {
     background-color: #E6C3BA;
     position: relative;
     left: 30px;
     display: none;
 }
    
-#repay-loan:hover {
+#repay-loan-btn:hover {
     background-color: #CCADA5;
 }
    
-#repay-loan:active {
+#repay-loan-btn:active {
     transform: scale(.96);
 }
 
-#buy-laptop {
+#buy-laptop-btn {
     background-color: #A3E6D1;
     position: relative;
     right: 10px;
 }
 
-#buy-laptop:hover {
+#buy-laptop-btn:hover {
     background-color: #91CCB9;
 }
 
-#buy-laptop:active {
+#buy-laptop-btn:active {
     transform: scale(.96);
 }
 
