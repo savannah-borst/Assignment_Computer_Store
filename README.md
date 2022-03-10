@@ -1,7 +1,7 @@
 # Assignment 1: Computer Store
 [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://savannah-borst.github.io/Assignment_Computer_Store/)
 ## Assignment
-For the Assignment we had to build a dynamic web page using "vanilla" JavaScript. We had to build a computer store. Where you can select different kinds of computers, imported via API. 
+For the Assignment we had to build a dynamic web page using "vanilla" JavaScript. We had to build a computer store. Where you can select different kinds of computers, imported via API. Buy a computer or get a loan.
 
 ## How To Use
 Go to the following website: https://savannah-borst.github.io/Assignment_Computer_Store/
