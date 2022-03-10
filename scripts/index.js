@@ -153,15 +153,15 @@ function repayLoan() {
 
 //Setting the innerHTML
 function setBalanceAmount(bank){
-    balanceAmount.innerText = bank + " " + "Euro";
+    balanceAmount.innerText = `${bank} Euro's`;
 }
 
 function setWorkAmount(work) {
-    workAmount.innerText = work + " " + "Euro";
+    workAmount.innerText = `${work} Euro's`;
 }
 
 function setLoanAmount(loan) {
-    loanAmount.innerText = loan + " " + "Euro";
+    loanAmount.innerText = `${loan} Euro's`;
 }
 
 //FETCH
@@ -193,7 +193,7 @@ async function selectChange() {
             laptopName.innerText = computer[i].title;
             image.setAttribute('src', imageURL);
             info.innerText = computer[i].description;
-            cost.innerText = computer[i].price + " " + "Euro";
+            cost.innerText = `${computer[i].price} Euro's`;
         }
     }
     
