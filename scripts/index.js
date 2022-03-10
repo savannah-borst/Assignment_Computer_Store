@@ -205,7 +205,7 @@ async function selectChange() {
     let computer = await getComputer();
     //loop through data 
     for (let i = 0; i < computer.length; i++) {
-        let imageURL = 'https://noroff-komputer-store-api.herokuapp.com/' + computer[i].image;
+        let imageURL = urlExists('https://noroff-komputer-store-api.herokuapp.com/' + computer[i].image);
         if (select.value == i) {
             features.innerText = computer[i].specs;
             laptopName.innerText = computer[i].title;
@@ -215,5 +215,17 @@ async function selectChange() {
         }
     }
     
+}
+
+//https://stackoverflow.com/questions/26630650/detect-404-error-on-page-load
+function urlExists(url) {
+    let http = new XMLHttpRequest();
+    http.open('HEAD', url, false);
+    http.send();
+    if (http.status == 404) {
+        return 'https://noroff-komputer-store-api.herokuapp.com/assets/images/5.png';
+    } else {
+        return url;
+    }
 }
 
