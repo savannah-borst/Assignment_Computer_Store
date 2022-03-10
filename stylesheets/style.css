@@ -31,13 +31,13 @@ header {
 /*General*/
 .container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     grid-template-rows: auto;
     grid-template-areas: 
-        "header header header header header"
-        ". bank bank select ."
-        ". work work loan ."
-        ". info info info .";
+        "header header header header header header header"
+        ". . bank bank select . ."
+        ". . work work loan . ."
+        ". .  info info info . .";
 }
 section {
     display: flex;
@@ -137,7 +137,7 @@ button {
 #buy-laptop {
     background-color: #A3E6D1;
     position: relative;
-    left: 20px;
+    right: 10px;
 }
 
 #buy-laptop:hover {
@@ -154,6 +154,10 @@ button {
     grid-area: bank;
 }
 
+.balance {
+    width: 5rem;
+}
+
 /*Outstanding Loan*/
 .outstanding-loan {
     flex-direction: column;
@@ -164,22 +168,23 @@ button {
     visibility: hidden;
 }
 
+#loan-amount {
+    position: relative;
+    bottom: 1.5rem;
+}
+
 /*Work*/
 .work {
     grid-area: work;
     height: 10rem;
     position: relative;
-    top: -75px;
+    bottom: 120px;
 }
-
-/*.headwork {
-    position: relative;
-    left: 20px;
-}*/
 
 #work-amount {
     position: relative;
     left: 20px;
+    width: 5rem;
 }
 
 /*Laptop Select*/
@@ -204,26 +209,33 @@ button {
 #features {
     margin: 0 2rem 1rem 2rem;
     font-size: 12px;
-    width: 10rem;
+    min-width: 10rem;
+    height: 6.5rem;
 }
 
 /*Laptop Info*/
 .laptop-info {
     grid-area: info;
     position: relative;
-    top: -120px;
+    bottom: 160px;
     height: 12rem;
 }
 
 img {
-    max-width: 150px;
-    max-height: 100px;
+    width: 150px;
+    position: relative;
+    left: 1.5rem;
 }
 
 #laptop-name {
-    max-width: 20rem;
+    width: 15rem;
 }
 
 #laptop-info {
-    max-width: 20rem;
+    width: 15rem;
+}
+
+#laptop-cost {
+    position: relative;
+    right: 10px;
 }
