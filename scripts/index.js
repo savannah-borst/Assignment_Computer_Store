@@ -53,12 +53,28 @@ function work() {
 function bank() {
     //if loan is true deduct 10% towards bank and remove 10% from outstanding loan
     if (loan) {
-        //if there is a loan when transfer to bank 90 goes to bank 10 to pay the loan
-        bankMoney += (workMoney / 100 * 90);
-        setBalanceAmount(bankMoney);
+        //if loan is equal or is less than 0
+        if (loanMoney - (workMoney / 100 * 10) <= 0) {
+            //set loan to 0
+            loanMoney = 0;
+            setLoanAmount(loanMoney);
 
-        loanMoney -= (workMoney / 100 * 10);
-        setLoanAmount(loanMoney);
+            //add remaining to bank
+            let add = (workMoney / 100 * 10) - loanMoney;
+            bankMoney += (workMoney / 100 * 90) + add;
+
+            //set visibility + loan is false
+            repayLoanBtn.style.display = "none";
+            outstanding.style.visibility = "hidden";
+            loan = false;
+        } else {
+            //if there is a loan when transfer to bank 90 goes to bank 10 to pay the loan
+            bankMoney += (workMoney / 100 * 90);
+            setBalanceAmount(bankMoney);
+
+            loanMoney -= (workMoney / 100 * 10);
+            setLoanAmount(loanMoney);
+        }
     } else {
         //if there is no loan everything goes to bank
         bankMoney += workMoney
@@ -68,8 +84,6 @@ function bank() {
     //reset workMoney
     workMoney = 0;
     setWorkAmount(workMoney);
-
-    //if loanmoney = 0 than turn visibility to hidden
 }
 
 // get loan button
@@ -118,9 +132,10 @@ function repayLoan() {
         workMoney = 0;
         setWorkAmount(workMoney);
 
-        //change visibility
+        //change visibility + loan is false
         repayLoanBtn.style.display = "none";
         outstanding.style.visibility = "hidden";
+        loan = false;
     } else {
         loanMoney -= workMoney;
         setLoanAmount(loanMoney);
@@ -143,7 +158,7 @@ function setLoanAmount(loan) {
     loanAmount.innerText = loan + " " + "Euro";
 }
 
-//fetch
+//FETCH
 async function getComputer() {
     let response = await fetch('https://noroff-komputer-store-api.herokuapp.com/computers');
     let result = await response.json();
