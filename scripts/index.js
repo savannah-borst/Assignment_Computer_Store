@@ -89,11 +89,32 @@ function bank() {
 
 // get loan button
 function getLoan() {
-    //pop-up/prompt for amount of loan
-    let amount = parseInt(prompt("please enter the amount you want to loan"));
+    //if loan is true then pop up alert otherwise pop up prompt for entering amount
     if (loan) {
         alert("You can only have one loan!");
-    } else if (amount > (bankMoney * 2)) {
+    } else {
+        let amount = parseInt(prompt("please enter the amount you want to loan"));
+        
+        //if amount is 2x bank balance show alert
+        if (amount > (bankMoney * 2)) {
+            alert("You can NOT get more loan than double your bank balance.");
+        } else if (amount == "" || amount == null || isNaN(amount)) {
+            alert("You did not fill in a number")
+        } else {
+            //set outstanding loan
+            loanMoney = amount;
+            setLoanAmount(loanMoney);
+            loan = true;
+            //make visible: repay button + outstanding loan section
+            repayLoanBtn.style.display = "inline";
+            outstanding.style.visibility = "visible";
+        }
+    }
+
+    
+    
+    
+    if (amount > (bankMoney * 2)) {
         alert("You can NOT get more loan than double your bank balance.");
     } else if (amount == "" || amount == null || isNaN(amount)) {
         alert("You did not fill in a number")
