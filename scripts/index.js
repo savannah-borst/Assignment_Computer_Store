@@ -33,6 +33,7 @@ setLoanAmount(loanMoney);
 
 populateSelect();
 selectChange();
+
 //EVENT LISTENERS
 workBtn.addEventListener("click", work);
 bankBtn.addEventListener("click", bank);
@@ -108,11 +109,16 @@ function getLoan() {
 }
 
 //buy now button
-function buyNow(cost) {
-    if (cost > balanceAmount) {
+function buyNow() {
+    let price = parseInt(cost.innerText.split(' '));
+    if (bankMoney < price) {
         //add warning message
+        alert("You do not have sufficient funds to buy this laptop");
     } else {
         //add succesfull purchase message
+        alert("You have succesfully purchased the computer");
+        bankMoney -= price;
+        setBalanceAmount(bankMoney);
         //deduct money from the bank
     }
 }
@@ -168,7 +174,6 @@ async function getComputer() {
 //populate select
 async function populateSelect(){
     let computer = await getComputer();
-    console.log(computer);
     for (let i = 0; i < computer.length; i++) {
         const optionElement = document.createElement("option");
         optionElement.setAttribute('value', i);
